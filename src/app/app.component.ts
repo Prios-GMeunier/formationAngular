@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shop';
+
+  btnState = true;
+
+  total: number = 0;
+
+  toggle() {
+    console.log('toto');
+  }
+
+  handle() {
+    console.log('');
+  }
 }
