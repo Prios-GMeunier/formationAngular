@@ -39,7 +39,7 @@ export class ProductService {
     },
   ];
 
-  getProduct(){
+  getProducts(){
     return this.products;
   }
 
@@ -58,8 +58,6 @@ export class ProductService {
   }
 
   decreaseStock(product: Product){
-    console.log(product.stock);
     product.stock--;
-    console.log(product.stock);
   }
 }

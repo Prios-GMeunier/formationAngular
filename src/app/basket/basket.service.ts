@@ -7,7 +7,9 @@ import { Product } from '../product/product.type';
 export class BasketService {
   basket: Product[] = [];
 
-  constructor() {}
+  getBasket() {
+    return this.basket;
+  }
 
   addProduct(product: Product) {
     this.basket.push(product);
