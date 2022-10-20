@@ -13,6 +13,8 @@ export class ProductComponent {
 
   @Output() addToBasket = new EventEmitter<Product>();
 
+
+
   protected onAddToBasket() {
     this.addToBasket.emit(this.product);
   }
