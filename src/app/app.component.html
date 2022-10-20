@@ -17,7 +17,7 @@
 
   <div class="row text-center">
 
-    <ng-container *ngFor="let product of products; let i = index">
+    <ng-container *ngFor="let product of products | productSorter; let i = index">
       <div class="col-md-3 col-sm-6 product-item" *ngIf="product.stock > 0">
         <app-product [product]="product" (addToBasket)="addToBasketAppComponent($event)"></app-product>
       </div>
