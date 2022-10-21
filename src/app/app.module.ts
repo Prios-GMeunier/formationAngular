@@ -14,11 +14,12 @@ import localeFr from '@angular/common/locales/fr';
 import { ProductSorterPipe } from './product-sorter.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { BasketComponent } from './basket/basket.component';
 
 registerLocaleData(localeFr);
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, ProductComponent, ProductSorterPipe, HomeComponent],
+  declarations: [AppComponent, MenuComponent, ProductComponent, ProductSorterPipe, HomeComponent, BasketComponent],
   imports: [BrowserModule,HttpClientModule,AppRoutingModule],
   providers: [ProductService,BasketService,{provide: LOCALE_ID, useValue: navigator.language}],
   bootstrap: [AppComponent],
