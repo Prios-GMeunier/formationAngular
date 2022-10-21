@@ -15,13 +15,14 @@ import { ProductSorterPipe } from './product-sorter.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { BasketComponent } from './basket/basket.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 registerLocaleData(localeFr);
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, ProductComponent, ProductSorterPipe, HomeComponent, BasketComponent],
+  declarations: [AppComponent, MenuComponent, ProductComponent, ProductSorterPipe, HomeComponent, BasketComponent, ProductDetailComponent],
   imports: [BrowserModule,HttpClientModule,AppRoutingModule],
-  providers: [ProductService,BasketService,{provide: LOCALE_ID, useValue: navigator.language}],
+  providers: [ProductService,BasketService,{provide: LOCALE_ID, useValue: 'fr'}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

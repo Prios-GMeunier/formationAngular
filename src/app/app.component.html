@@ -1,6 +1,14 @@
 <app-menu></app-menu>
 
-<router-outlet></router-outlet>
+<div class="container">
+  <router-outlet></router-outlet>
+
+  <hr />
+
+  <pre>{{ basket | json }}</pre>
+  <footer>Copyright &copy; Your Website 2022</footer>
+</div>
+
 
 <!--
 <div class="container">
