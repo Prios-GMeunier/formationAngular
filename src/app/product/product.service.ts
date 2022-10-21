@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Product } from './product.type';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
+  products$ = new BehaviorSubject<Product[]>([]);
+  /*
   products: Product[] = [
     {
       title: 'Sweat homme',
@@ -37,10 +41,11 @@ export class ProductService {
       price: 12.5,
       stock: 4
     },
-  ];
+  ];*/
 
-  getProducts(){
-    return this.products;
+  getProducts(): Observable<Product[]> {
+    //return this.products;
+    return this.httpClient.get<Product[]>('http://localhost:8080/rest/products').pipe(tap((products) => this.products$.next(products)));
   }
 
   isTheLast(product: Product){

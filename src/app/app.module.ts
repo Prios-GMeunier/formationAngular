@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TotoComponent } from './toto/toto.component';
@@ -17,7 +18,7 @@ registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [AppComponent, TotoComponent, MenuComponent, ProductComponent, ProductSorterPipe],
-  imports: [BrowserModule],
+  imports: [BrowserModule,HttpClientModule],
   providers: [ProductService,BasketService,{provide: LOCALE_ID, useValue: navigator.language}],
   bootstrap: [AppComponent],
 })
