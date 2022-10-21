@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { BasketService } from './basket/basket.service';
 import { ProductService } from './product/product.service';
 import { Product } from './product/product.type';
@@ -16,6 +17,8 @@ export class AppComponent implements OnInit{
     //return this.basketService.getTotal();
     return 0;
   }
+
+  
  
     //products = this.productService.getProducts();
     products!: Product[];

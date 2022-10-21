@@ -12,7 +12,7 @@ export class BasketService {
   
   basket$ = new BehaviorSubject<Product[]>([]);
 
-  //total$ = this.basket$.pipe(map((basket) => basket.reduce((total, product) => total + product.price, 0)));
+  total$ = this.basket$.pipe(map((basket) => basket.reduce((total, product) => total + product.price, 0)));
 
   getBasket(): Observable<Product[]> {
     //return this.basket$;
@@ -34,6 +34,10 @@ export class BasketService {
       price += product.price;
     });
     return price;
+  }*/
+/*
+  getTotal(): number {
+    return this.products.reduce((previous, next) => previous + next.price, 0);
   }*/
 
 }
